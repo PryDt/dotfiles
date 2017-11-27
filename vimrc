@@ -31,6 +31,12 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 " Trailing Whitespace Highlighter
 Plugin 'bronson/vim-trailing-whitespace'
 
+" for Emmet
+Plugin 'mattn/emmet-vim'
+
+" for Crystal-lang Support
+Plugin 'rhysd/vim-crystal'
+
 call vundle#end()
 
 syntax on
@@ -51,3 +57,4 @@ set number
 
 " shows what you're typing as a command
 set showcmd
+
