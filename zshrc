@@ -7,7 +7,7 @@ export ZSH=/home/prydt/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="lambda-gitster"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -60,7 +60,6 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -94,16 +93,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# nvim aliases
-alias vim="nvim"
-alias zshrc="nvim ~/.zshrc && source ~/.zshrc"
+if [ -f /etc/bash.command-not-found ]; then
+    . /etc/bash.command-not-found
+fi
+
+# vim / dotfile aliases
+alias vim=nvim
 alias vimrc="nvim ~/.vimrc"
-# fpath+=($fpath '/usr/local/lib/node_modules/pure-prompt/functions')
+alias zshrc="nvim ~/.zshrc && source ~/.zshrc"
 
-# a neofetch alias
-alias fetch="clear && neofetch --gtk3 on"
+# the good alias
+alias pls=sudo
+alias sel="maim -s ~/temp.png"
 
-# for the pure prompt zsh theme
-# source /etc/zsh_command_not_found
-# autoload -U promptinit; promptinit
-# prompt pure
+PATH=$PATH:~/go/bin:~/build/color-scripts/color-scripts
+
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
