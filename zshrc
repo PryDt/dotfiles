@@ -172,3 +172,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 ### alias
 alias pls=sudo
 alias vim=nvim
+
+alias shutdown="sudo systemctl poweroff"
+alias reboot="sudo systemctl reboot"
+
