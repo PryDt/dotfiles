@@ -173,3 +173,12 @@ bar {
 
 # pywal config
 exec wal -R
+
+# startup programs
+exec safeeyes  # prevents RSI
+exec flameshot # screenshoting tool
+exec redshift  # blue light filter
+
+# lock screen with cool "corrupter" effect
+# NEEDS corrupter-bin installed on system
+bindsym $mod+Control+l exec --no-startup-id sh ./.lock

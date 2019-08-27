@@ -7,6 +7,7 @@ Plugin 'joshdick/onedark.vim'          " Atom's One Dark theme
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
+"Plugin 'dylanaraps/wal.vim'
 "Plugin 'vim-airline/vim-airline'
 "Plugin 'rust-lang/rust.vim'
 "Plugin 'racer-rust/vim-racer'
@@ -15,7 +16,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'junegunn/goyo.vim'
 "Plugin 'junegunn/limelight.vim'
-"Plugin 'ryanoasis/vim-devicons'
+Plugin 'ryanoasis/vim-devicons'
 call vundle#end()
 
 
@@ -37,6 +38,7 @@ set mouse=a " mouse movements
 map <C-n> :NERDTreeTabsToggle<LF> " toggle tree
 set clipboard=unnamedplus " clipboard = normal clipboard
 colorscheme onedark " colorscheme
+"colorscheme wal
 
 " map alt + arrow keys to switch between windows
 nmap <silent> <A-Up> :wincmd k<CR>
