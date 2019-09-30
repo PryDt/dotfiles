@@ -22,7 +22,7 @@ setopt ALL_EXPORT
 ### Set/unset  shell options
 ############################
 setopt   notify globdots correct pushdtohome cdablevars autolist
-setopt   correctall autocd recexact longlistjobs
+setopt   autocd recexact longlistjobs
 setopt   autoresume histignoredups pushdsilent 
 setopt   autopushd pushdminus extendedglob rcquotes mailwarning
 unsetopt bgnice autoparamslash
@@ -176,5 +176,5 @@ alias yeet="rm -rf"
 
 alias shutdown="sudo systemctl poweroff"
 alias reboot="sudo systemctl reboot"
+alias restart_wifi="sudo systemctl restart NetworkManager"
 
-unsetopt correct_all
