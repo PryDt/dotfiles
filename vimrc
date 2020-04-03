@@ -17,21 +17,29 @@ Plugin 'thaerkh/vim-indentguides'
 Plugin 'ervandew/supertab'
 Plugin 'vim-airline/vim-airline'
 Plugin 'danro/rename.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'mattn/emmet-vim'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'Shougo/deoplete-clangx'
+
 call vundle#end()
 
 
 " syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-" rust settings
-let g:racer_cmd = "~/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
 
 " for rainbow ()s
 let g:rainbow_active = 1
+
+" Use Deoplete
+let g:deoplete#enable_at_startup = 1
 
 " tab
 set shiftwidth=4 smartindent expandtab
@@ -71,4 +79,4 @@ nmap <silent> j gj
 nmap <silent> k gk
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='onedark'
+let g:airline_theme='wal'
