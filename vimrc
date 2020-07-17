@@ -1,82 +1,43 @@
-" prydt's VimRC
+" pry's vimrc
 
 " Vundle Plugins
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'joshdick/onedark.vim'           " Atom's One Dark theme
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'scrooloose/nerdtree'            " file tree
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'dylanaraps/wal.vim'             " syncs colorscheme with system
-Plugin 'bhurlow/vim-parinfer'           " for lisp indentation
-Plugin 'luochen1990/rainbow'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'thaerkh/vim-indentguides'
+Plugin 'tpope/vim-sensible'
 Plugin 'ervandew/supertab'
-Plugin 'vim-airline/vim-airline'
+Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'danro/rename.vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'mattn/emmet-vim'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'Shougo/deoplete-clangx'
+Plugin 'thaerkh/vim-indentguides'
+Plugin 'scrooloose/nerdtree'
+
+" Colorscheme
+Plugin 'dylanaraps/wal.vim'
+Plugin 'joshdick/onedark.vim'
+
+" Status bar
+Plugin 'vim-airline/vim-airline'
+
+" Black auto format python files on save
+Plugin 'psf/black'
+
+" Git support
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 
-
-" syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" for rainbow ()s
-let g:rainbow_active = 1
-
-" Use Deoplete
-let g:deoplete#enable_at_startup = 1
-
-" tab
-set shiftwidth=4 smartindent expandtab
-
+set shiftwidth=4 smartindent expandtab " tabs
 set number  " line numbers
 set mouse=a " mouse movements
-set ai " Auto indent
-set si " Smart indent
-map <C-n> :NERDTreeTabsToggle<LF> " toggle tree
+set ai " auto indent
+set si " smart indent
 set clipboard=unnamedplus " clipboard = normal clipboard
-"colorscheme onedark " colorscheme
-colorscheme wal " uses pywal colorscheme
+set list " show special characters
 
-" map alt + arrow keys to switch between windows
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
-
-" open a terminal in a new tab with C-t
-function TermTab()
-    tabnew
-    terminal
-    startinsert
-endfunction
-command TermTab call TermTab()
-map <C-t> :call TermTab()<LF>
-
-" map esc to exit terminal mode
-tnoremap <Esc> <C-\><C-n>
-
-imap <silent> <Down> <C-o>gj
-imap <silent> <Up> <C-o>gk
-nmap <silent> <Down> gj
-nmap <silent> <Up> gk
-nmap <silent> j gj
-nmap <silent> k gk
-
+" Colorscheme
+colorscheme onedark
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='wal'
+
+" Black Autoformat
+autocmd BufWritePre *.py execute ':Black'
