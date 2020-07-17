@@ -24,6 +24,9 @@ Plugin 'psf/black'
 " Git support
 Plugin 'tpope/vim-fugitive'
 
+" Nice commenting
+Plugin 'tpope/vim-commentary'
+
 call vundle#end()
 
 set shiftwidth=4 smartindent expandtab " tabs
